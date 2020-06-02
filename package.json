@@ -3,6 +3,11 @@
         "cypress:open": "cypress open"
     },
     "devDependencies": {
-    "cypress": "^4.7.0"
-  }
+        "cypress": "^4.7.0",
+        "cypress-cucumber-preprocessor": "^2.4.0",
+        "cypress-shadow-dom": "^1.4.0"
+    },
+    "cypress-cucumber-preprocessor": {
+        "nonGlobalStepDefinitions": true
+    }
 }

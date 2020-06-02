@@ -1,3 +1,5 @@
 {
-  "projectId": "kpq1dx"
+  "projectId": "kpq1dx",
+  "testFiles": "**/*.{feature,features}",
+  "video": false
 }

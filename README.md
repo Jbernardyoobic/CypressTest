@@ -1,11 +1,20 @@
-# CypressTest
+# Cypress Test Repo
 
-[https://www.npmjs.com/package/cypress-shadow-dom] Shadow dom support
+* [Documentation](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
+* [Shadow dom](https://www.npmjs.com/package/cypress-shadow-dom)
+* [CI](https://docs.cypress.io/guides/guides/continuous-integration.html)
+* [Best practices](https://docs.cypress.io/guides/references/best-practices.html)
+* [Cucumber](https://www.npmjs.com/package/cypress-cucumber-preprocessor)
 
-github integration, slack integration, project analytics
 
-[https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell] Documentation
+## [Plugins](https://docs.cypress.io/plugins/index.html)
+* [Drag Drop](https://github.com/4teamwork/cypress-drag-drop)
+* [iFrame](https://gitlab.com/kgroat/cypress-iframe)
+* [Wait Until](https://github.com/NoriSte/cypress-wait-until)
+* [vscode Cypress Helper](https://marketplace.visualstudio.com/items?itemName=Shelex.vscode-cy-helper)
 
-Billing plans
-
-[https://docs.cypress.io/guides/guides/continuous-integration.html] CI setup
+## Billing
+* Sprout : 5 users, 25.000 test recordings ---> 89€/month
+* Tree: 10 users, 75.000 test recordings ---> 178€/month
+* Forest: 20 users, 150.000 test recordings ---> 357€/month
+* Custom: TBD
