@@ -10,7 +10,16 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
+Cypress.Commands.add("login", () => {
+    cy.request({
+        url: 'https://yoobic-loopback-dev-v3.herokuapp.com/auth/login',
+        method: 'POST',
+        body: { 
+            username: 'jbernard@yoobic.com',
+            password: '********'
+        }
+    })
+})
 //
 //
 // -- This is a child command --

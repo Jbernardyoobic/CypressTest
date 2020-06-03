@@ -1,4 +1,4 @@
-import { Given, When, Then, Before } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import 'cypress-shadow-dom';
  
 Given(/^I am in the boost web login page$/, () => {
@@ -64,5 +64,5 @@ When(/^I click the log in button$/, () => {
 })
 
 Then(/^I should be in the home page$/, () => {
-  cy.get('menu-page').should('be.visible')
+    cy.get('menu-page').should('be.visible')
 })
