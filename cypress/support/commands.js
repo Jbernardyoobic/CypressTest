@@ -15,8 +15,8 @@ Cypress.Commands.add("login", () => {
         url: 'https://yoobic-loopback-dev-v3.herokuapp.com/auth/login',
         method: 'POST',
         body: { 
-            username: 'jbernard@yoobic.com',
-            password: '********'
+            username: 'hqboost',
+            password: 'y'
         }
     })
 })

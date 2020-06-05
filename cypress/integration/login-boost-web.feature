@@ -12,7 +12,7 @@ Feature: Login Boost Web
     
     @focus
     Scenario: Log in
-        When    I fill the username field with value "jbernard@yoobic.com"
-        And     I fill the password field with value "Jacobus92i"
+        When    I fill the username field with value "hqboost"
+        And     I fill the password field with value "y"
         And     I click the log in button
         Then    I should be in the home page
