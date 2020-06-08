@@ -1,11 +1,17 @@
 # Cypress Test Repo
 
+## How to run
+The tests run on localhost, you have to serve to be able to test. You can also change the url in the spec file directly.
+    npm install
+    npm run cypress:open      
+
+## Useful links
+
 * [Documentation](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell)
 * [Shadow dom](https://www.npmjs.com/package/cypress-shadow-dom)
 * [CI](https://docs.cypress.io/guides/guides/continuous-integration.html)
 * [Best practices](https://docs.cypress.io/guides/references/best-practices.html)
 * [Cucumber](https://www.npmjs.com/package/cypress-cucumber-preprocessor)
-
 
 ## [Plugins](https://docs.cypress.io/plugins/index.html)
 * [Drag Drop](https://github.com/4teamwork/cypress-drag-drop)
