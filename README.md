@@ -2,8 +2,9 @@
 
 ## How to run
 The tests run on localhost, you have to serve to be able to test. You can also change the url in the spec file directly.
-    npm install
-    npm run cypress:open      
+
+        npm install
+        npm run cypress:open      
 
 ## Useful links
 
