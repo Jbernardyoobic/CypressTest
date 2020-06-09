@@ -48,14 +48,13 @@ describe('SYSLEY', () => {
     })
 
     it('should log in', () => {
-        cy.getPage()
-        .shadowFind('yoo-login')
-        .getInput()
+        cy.getPage().shadowFind('yoo-login').as('login')
+
+        cy.get('@login').getInput()
         .shadowType('hqboost')
         .shadowTrigger('input')
 
-        cy.getPage()
-        .shadowFind('yoo-login')
+        cy.get('@login')
         .shadowFind('.password-container')
         .getInput()
         .shadowType('y')
@@ -63,8 +62,7 @@ describe('SYSLEY', () => {
 
         cy.wait(1000)
 
-        cy.getPage()
-        .shadowFind('yoo-login')
+        cy.get('@login')
         .shadowFind('.login-button')
         .shadowFind('yoo-button')
         .shadowFind('button')
@@ -90,30 +88,28 @@ describe('SYSLEY', () => {
 
         cy.wait(1500)
 
-        cy.getPage()
-        .shadowFind('yoo-entity-search')
+        cy.getPage().shadowFind('yoo-entity-search').as('search')
+
+        cy.get('@search')
         .shadowFind('yoo-form-input.search')
         .shadowFind('input')
         .shadowType('keywords').shadowTrigger('input')
 
         cy.wait(2000)
 
-        cy.getPage()
-        .shadowFind('yoo-entity-search')
+        cy.get('@search')
         .shadowFind('yoo-entity-search-recent')
         .shadowFind('li.menu-item').shadowContains('keywords').shadowClick()
 
         cy.wait(500)
 
-        cy.getPage()
-        .shadowFind('yoo-entity-search')
+        cy.get('@search')
         .shadowFind('yoo-tabs')
         .shadowFind('div.tab-container').shadowLast().shadowClick()
 
         cy.wait(500)
 
-        cy.getPage()
-        .shadowFind('yoo-entity-search')
+        cy.get('@search')
         .shadowFind('yoo-entity-search-tags')
         .shadowFind('yoo-icon.yo-filter').shadowClick()
 
@@ -123,8 +119,7 @@ describe('SYSLEY', () => {
 
         cy.wait(1000)
 
-        cy.getPage()
-        .shadowFind('yoo-entity-search')
+        cy.get('@search')
         .shadowFind('yoo-navbar')
         .shadowFind('yoo-button')
         .shadowClick()
@@ -154,20 +149,20 @@ describe('SYSLEY', () => {
         cy.wait(500)
 
         cy.getPage()
-        .shadowFind('yoo-card-feed')
-        .shadowFind('yoo-form-carousel')
+        .shadowFind('yoo-card-feed').as('feed')
+
+        cy.get('@feed')
+        .shadowFind('yoo-form-carousel').as('carousel')
+
+        cy.get('@carousel')
         .shadowFind('yoo-icon.yo-heart')
         .shadowClick()
 
-        cy.getPage()
-        .shadowFind('yoo-card-feed')
-        .shadowFind('yoo-form-carousel')
+        cy.get('@carousel')
         .shadowFind('yoo-icon.yo-heart')
         .shadowClick()
 
-        cy.getPage()
-        .shadowFind('yoo-card-feed')
-        .shadowFind('yoo-form-carousel')
+        cy.get('@carousel')
         .shadowFind('yoo-icon.yo-eye')
         .shadowClick()
 
@@ -179,5 +174,21 @@ describe('SYSLEY', () => {
 
         cy.goBack()
 
+    })
+
+    it('should log out', () => {
+        cy.shadowGet('yoo-header')
+        .shadowFind('yoo-navbar')
+        .shadowFind('yoo-avatar')
+        .shadowClick()
+
+        cy.wait(1000)
+
+        cy.getPage()
+        .shadowFind('yoo-profile')
+        .shadowFind('.profile-logout')
+        .shadowClick()
+
+        cy.shadowGet('yoo-alert').shadowFind('.buttons-container').shadowFind('.last').shadowClick()
     })
 })
