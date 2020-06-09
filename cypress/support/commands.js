@@ -1,8 +1,6 @@
+import 'cypress-shadow-dom';
+
 // ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
 // For more comprehensive examples of custom
 // commands please read more here:
 // https://on.cypress.io/custom-commands
@@ -19,6 +17,36 @@ Cypress.Commands.add("login", () => {
             password: 'y'
         }
     })
+})
+
+Cypress.Commands.add("getPage", () => {
+    cy.shadowGet('.ion-page').shadowLast().then(el => console.log(el))
+})
+
+Cypress.Commands.add("goBack", () => {
+    cy.getPage()
+    .shadowFind('yoo-navbar')
+    .shadowFind('yoo-icon.yo-left')
+    .shadowClick()
+
+    cy.wait(500)
+})
+
+Cypress.Commands.add("closePage", () => {
+    cy.getPage()
+    .shadowFind('yoo-icon.yo-close')
+    .shadowClick()
+
+    cy.wait(500)
+})
+
+Cypress.Commands.add("getInput", {
+    prevSubject: 'optional'
+  }, (subject) => {
+    cy.wrap(subject)
+    .shadowFind('yoo-form-input-container')
+    .shadowFind('yoo-form-input')
+    .shadowFind('input')
 })
 //
 //

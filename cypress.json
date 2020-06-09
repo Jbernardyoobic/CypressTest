@@ -1,5 +1,8 @@
 {
   "projectId": "kpq1dx",
   "testFiles": "**/*.{feature,features,spec.js}",
-  "video": false
+  "video": false,
+  "waitForAnimations": true,
+  "viewportWidth" : 375,
+  "viewportHeight" : 812
 }
