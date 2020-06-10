@@ -21,11 +21,10 @@ describe('SYSLEY', () => {
         .shadowType('dev')
         .shadowTrigger('input')
     
-        cy.wait(1000)
+        cy.wait(2000)
 
-        cy.get('yoo-ion-footer')
-        .find('yoo-button')
-        .click()
+        cy.shadowGet('yoo-ion-footer')
+        .shadowFind('yoo-button').shadowClick()
 
         cy.wait(2000)
     })
